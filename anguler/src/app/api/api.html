@@ -1,0 +1,22 @@
+<main class="todos-container">
+    <h1>Todos</h1>
+
+    <div class="todo-list">
+        <div class="todo-card" *ngFor="let todo of todos" [class.completed]="todo.completed">
+            <div class="todo-header">
+                <span class="todo-id">#{{ todo.id }}</span>
+                <span class="todo-user">User {{ todo.userId }}</span>
+            </div>
+
+            <p class="todo-title">
+                {{ todo.title }}
+            </p>
+
+            <div class="todo-footer">
+                <span class="status" [class.done]="todo.completed" [class.pending]="!todo.completed">
+                    {{ todo.completed ? 'Completed' : 'Pending' }}
+                </span>
+            </div>
+        </div>
+    </div>
+</main>

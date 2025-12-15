@@ -1,0 +1,243 @@
+.popup-btn {
+    padding: 10px 20px;
+    background: #6f00ff6e;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.popover-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1001;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1000;
+    backdrop-filter: blur(2px);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+
+.modal-icon {
+    background: linear-gradient(135deg, #a8c4b0, #57e47a);
+    padding: 14px;
+    border-radius: 50%;
+    color: #1a7f3c;
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.25);
+}
+
+.check-animated path {
+    stroke: #0c7d3c;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: tickBounce 2s ease-in-out infinite;
+}
+
+@keyframes tickBounce {
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dashoffset: 40;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.modal-content {
+    background: honeydew;
+    width: 350px;
+    padding: 28px 34px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    animation: popIn 0.25s ease-out;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 5px 0 20px 0;
+    color: #333;
+}
+
+.modal-body {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.label-title {
+    font-weight: 600;
+    margin: 10px 0 6px;
+    display: block;
+    color: #030303;
+    font-size: 15px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+.radio-group input {
+    margin-right: 6px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.btn {
+    padding: 10px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+    width: 160px;
+}
+
+.btn.yes {
+    background: #425e47;
+    color: white;
+}
+
+.btn.yes:hover {
+    background: #259137;
+}
+
+.btn.no {
+    background: #6c757d;
+    color: white;
+}
+
+.btn.no:hover {
+    background: #5b666e;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.real-file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+}
+
+.file-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 14px;
+    border-radius: 8px;
+    background: #f4f4f7;
+    border: 1px solid #dedee3;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+    transition: transform 0.08s ease, background 0.12s ease;
+    user-select: none;
+}
+
+.file-btn:active {
+    transform: translateY(1px);
+}
+
+.file-btn:focus {
+    outline: 3px solid rgba(46, 160, 67, 0.12);
+}
+
+.file-btn-text {
+    font-weight: 600;
+    color: #2d2d2f;
+    font-size: 14px;
+}
+
+.file-name {
+    flex: 1 1 auto;
+    padding: 10px 12px;
+    background: #fafafa;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-hint {
+    font-size: 13px;
+    color: #6b6b6b;
+    margin-top: 8px;
+    text-align: left;
+}
+
+.file-hint.error {
+    color: #b40000;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 92%;
+        padding: 20px;
+    }
+
+    .file-upload {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .file-name {
+        width: 100%;
+    }
+}
