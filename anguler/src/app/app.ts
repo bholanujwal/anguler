@@ -1,11 +1,12 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
+import { Button } from './shared/UI/button/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule,],
+  imports: [RouterModule, Button],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -29,4 +30,7 @@ export class App {
     this.router.navigate(["/api"]);
   }
 
+  save(){
+    console.log("button is clicked");
+  }
 }
